@@ -1,0 +1,190 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,700;1,400;1,700&display=swap");
+
+:root {
+  /* Primary */
+  --color-Tomato: hsl(4, 100%, 67%);
+  /* Neutral */
+  --color-Dark-Slate-Grey: hsl(234, 29%, 20%);
+  --color-Charcoal-Grey: hsl(235, 18%, 26%);
+  --color-Grey: hsl(231, 7%, 60%);
+  --color-White: hsl(0, 0%, 100%);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+ul,
+li {
+  list-style: none;
+}
+
+body {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--color-Charcoal-Grey);
+  font-family: "Roboto", sans-serif;
+  color: var(--color-Dark-Slate-Grey);
+}
+
+.Newsletter-Form {
+  width: 1000px;
+  height: 650px;
+  border-radius: 30px;
+  background-color: var(--color-White);
+  padding: 1.5rem;
+  display: flex;
+  transition: all 0.5s ease-in-out;
+}
+
+.Newsletter-right,
+.Newsletter-left {
+  width: 100%;
+  height: 100%;
+  background-color: var(--color-White);
+}
+
+.Newsletter-right {
+  background-image: url(../assets/images/illustration-sign-up-desktop.svg);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  border-radius: 10px;
+}
+
+.Newsletter-left {
+  padding: 4rem 3rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.title {
+  font-size: 4rem;
+  font-weight: 700;
+}
+
+ul {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+li {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.Newsletter-left .wrapper p {
+  font-size: 14px;
+}
+
+.wrapper span {
+  display: flex;
+  justify-content: space-between;
+}
+
+#inputEmail {
+  height: 3.5rem;
+  padding-left: 1rem;
+  font-size: 16px;
+  border-radius: 10px;
+  border: 1px solid var(--color-Grey);
+  outline: none;
+}
+
+#inputEmail:is(:focus).error {
+  border-color: var(--color-Dark-Slate-Grey);
+  background-color: transparent;
+}
+
+.btn {
+  height: 3.5rem;
+  font-size: 16px;
+  background: var(--color-Dark-Slate-Grey);
+  color: white;
+  border-radius: 10px;
+  border: none;
+  cursor: pointer;
+}
+
+.btn:hover {
+  background: linear-gradient(
+    90deg,
+    rgba(255, 87, 147, 1) 0%,
+    rgba(255, 93, 126, 1) 18%,
+    rgba(255, 98, 87, 1) 38%
+  );
+}
+
+.Newsletter-Form-Success {
+  width: 550px;
+  height: 550px;
+  border-radius: 30px;
+  padding: 4rem 3rem;
+  background-color: var(--color-White);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: all 0.5s ease-in-out;
+}
+
+.active {
+  display: flex;
+}
+
+.inactive {
+  display: none;
+}
+
+.errorMessage {
+  display: none;
+  color: var(--color-Tomato);
+}
+
+#inputEmail.error {
+  border: 1px solid red;
+  background-color: rgba(252, 0, 0, 0.171);
+}
+
+@media (max-width: 800px) {
+  .Newsletter-Form {
+    width: 100%;
+    height: 100vh;
+    border-radius: 0;
+    padding: 0;
+    flex-direction: column-reverse;
+  }
+
+  .Newsletter-left {
+    padding: 1.25rem;
+    gap: 1.25rem;
+  }
+
+  .Newsletter-right {
+    background-image: url(../assets/images/illustration-sign-up-mobile.svg);
+  }
+
+  .title {
+    font-size: 3rem;
+  }
+
+  .Newsletter-Form-Success {
+    width: 100%;
+    height: 100vh;
+    border-radius: 0;
+    padding: 1rem;
+  }
+}
